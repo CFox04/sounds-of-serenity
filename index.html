@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tooltip.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Sounds of Serenity</title>
+</head>
+
+<body>
+    <small id="address">soundsofserenity.io</small>
+    <main>
+        <div class="sounds-section">
+            <div class="column left">
+                <img class="header-img" src="{{ url_for('static', filename='assets/soundwave.svg') }}" alt="Sound" />
+                <div class="buttons-container sounds">
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/campfire.svg') }}"
+                        alt="Campfire" data-audioplaylist="campfire" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/rain.svg') }}" alt="Rain"
+                        data-audioplaylist="rain" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/thunderstorm.svg') }}"
+                        alt="Storm" data-audioplaylist="thunderstorm" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/wind.svg') }}" alt="Wind"
+                        data-audioplaylist="wind" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/ocean.svg') }}" alt="Ocean"
+                        data-audioplaylist="ocean" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/chatter.svg') }}" alt="Chatter"
+                        data-audioplaylist="chatter" />
+                    <img id="airplane" class="sound-button" src="{{ url_for('static', filename='assets/airplane.svg') }}"
+                        alt="airplane" data-audioplaylist="airplane" />
+                </div>
+            </div>
+            <div class="column right">
+                <img class="header-img" src="{{ url_for('static', filename='assets/music.svg') }}" alt="Music" />
+                <div class="buttons-container music">
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/saxophone.svg') }}" alt="Jazz"
+                        data-audioplaylist="jazz" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/lofi.svg') }}" alt="Lofi Beats"
+                        data-audioplaylist="lofi" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/acousticguitar.svg') }}"
+                        alt="Acoustic" data-audioplaylist="acoustic" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/china.svg') }}" alt="Chinese"
+                        data-audioplaylist="chinese" />
+                    <img class="sound-button" src="{{ url_for('static', filename='assets/meditation.svg') }}"
+                        alt="Meditation" data-audioplaylist="meditation" />
+                    <!-- <img class="sound-button" src="{{ url_for('static', filename='assets/orchestra.svg') }}" -->
+                        <!-- alt="Orchestra" data-audioplaylist="classic" /> -->
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="slider-panels">
+            <div class="column slider-panel-column left">
+            </div>
+            <div class="column slider-panel-column right">
+                <div class="slider-container tooltip">
+                    <img src="{{ url_for('static', filename='assets/speaker.svg') }}" alt="Speaker">
+                    <div class="slider volume" data-audio="music" data-audiotype="music"></div>
+                    <span class="tooltiptext">Music Volume</span>
+                </div>
+                <div class="tooltip">
+                    <img id="skip" src="{{ url_for('static', filename='assets/shuffle.svg') }}" alt="Skip">
+                    <span class="tooltiptext">Skip</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <small>
+            © 2020 Colton Fox<br>
+            Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a>,
+            <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>,<br>
+            and <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
+            Music credits can be found <a href="/credits" title="Credits">here</a>
+        </small>
+    </footer>
+    <script>let audioNames = JSON.parse('{{ audioNames | tojson | safe}}');</script>
+    <script src="{{ url_for('static', filename='scripts/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/audio-model.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/driver.js') }}"></script>
+</body>
+
+</html>
