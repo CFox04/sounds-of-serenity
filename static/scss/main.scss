@@ -1,0 +1,239 @@
+// Resets
+html,
+body {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Questrial";
+    color: white;
+}
+
+$primary-color: #17b978;
+$accent-color: #d3d3d3;
+$background-color1: #001b35;
+$background-color2: #001326;
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin dropShadow($transparency) { 
+    filter: drop-shadow( 0 0 2px rgba($primary-color, $transparency)); 
+}
+
+body {
+    position: relative;
+    padding: 3%;
+    @include flexCenter(column);
+    background-image: linear-gradient($background-color1, $background-color2);
+    background-repeat: no-repeat;
+}
+
+main {
+    // position: relative;
+    min-height: inherit;
+    // @include flexCenter(column);
+    // justify-content: flex-start;
+}
+
+h2 {
+    color: $primary-color;
+}
+
+hr {
+    width: 50%;
+    // border: 1px solid $accent-color;
+    border-width: 0;
+    height: 1px;
+    background-color: $accent-color;
+}
+
+ul {
+    padding: 1em;
+    // list-style: none;
+
+    li {
+        padding: 0.3em;
+    }
+}
+
+a:link {
+    color: $primary-color;
+}
+
+.sounds-section {
+    margin-top: 20vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding-bottom: 2.5em;
+}
+
+.sound-button.selected {
+    @include dropShadow(0.4);
+}
+
+.column {
+    @include flexCenter(column);
+
+    .header-img {
+        width: 6em;
+        margin-bottom: 4em;
+        @include dropShadow(0.4);
+    }
+}
+
+.left {
+    padding-right: 10vw;//20%;
+}
+
+.right {
+    padding-left: 10vw;//20%;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 2em;
+    justify-items: center;
+    align-items: center;
+}
+
+.sound-button:hover {
+    cursor: pointer;
+}
+
+.slider-panels {
+    // height: 0;
+    @include flexCenter(row);
+    width: 100%;
+    align-items: start;
+    justify-content: start;
+}
+
+.column.slider-panel-column {
+    width: 100%;
+}
+
+#skip {
+    width: 1.5em;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.slider-container {
+    position: relative;
+    @include flexCenter(row);
+    width: 100%;
+    padding: 1em;
+
+    img {
+        position: absolute;
+        // margin-right: 1em;
+        left: 15%;
+        width: 1.1em;
+    }
+}
+
+.slider.ui-slider {
+    width: 50%; 
+    height: 0.6em; 
+    background-color: white; 
+    border: none;
+    border-radius: 1em;
+
+    .ui-slider-handle {
+        margin-top: 0.15em;
+        width: 0.9em; 
+        height: 0.9em; 
+        background: $primary-color; 
+        cursor: pointer;
+        border: none;
+        border-radius: 100%;
+        @include dropShadow(0.8);
+
+        &:focus {
+            outline: none;
+            // background-clip: padding-box;
+            // box-shadow: 0 0 0 7px rgba(211, 211, 211, 0.6)
+        }
+    }
+
+    .ui-slider-range {
+        border-radius: inherit;
+        background-color: $primary-color;
+        @include dropShadow(0.8);
+    }
+}
+
+footer {
+    margin-top: 10%;
+    height: 2.5em;
+    color: rgba($accent-color, 0.2);
+    text-align: center;
+}
+
+#address {
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    color: $primary-color;
+}
+
+// Tablets
+@media screen and (max-width: 80em) {
+    .buttons-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+// Phones
+@media screen and (max-width: 60em) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4em;
+    }
+
+    #left, #right {
+        padding: 2em;
+    }
+
+    .column {
+        @include flexCenter(column);
+
+        .header-img {
+            width: 9vw;
+            min-width: 4em;
+            margin-bottom: 3em;
+        }
+    }
+
+    .sound-button {
+        width: 6vw;
+        min-width: 2.5em;
+    }   
+}
+
+// Scrollbar
+
+// width 
+::-webkit-scrollbar {
+    width: 0.4em;
+    background-image: linear-gradient($background-color1, $background-color2);
+}
+
+// Handle 
+::-webkit-scrollbar-thumb {
+    background: rgba($accent-color, 0.2);
+    border-radius: 1em;
+}

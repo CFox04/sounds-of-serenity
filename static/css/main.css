@@ -1,0 +1,294 @@
+html,
+body {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Questrial";
+  color: white;
+}
+
+body {
+  position: relative;
+  padding: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#001b35), to(#001326));
+  background-image: linear-gradient(#001b35, #001326);
+  background-repeat: no-repeat;
+}
+
+main {
+  min-height: inherit;
+}
+
+h2 {
+  color: #17b978;
+}
+
+hr {
+  width: 50%;
+  border-width: 0;
+  height: 1px;
+  background-color: #d3d3d3;
+}
+
+ul {
+  padding: 1em;
+}
+
+ul li {
+  padding: 0.3em;
+}
+
+a:link {
+  color: #17b978;
+}
+
+.sounds-section {
+  margin-top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2.5em;
+}
+
+.sound-button.selected {
+  -webkit-filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.4));
+          filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.4));
+}
+
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.column .header-img {
+  width: 6em;
+  margin-bottom: 4em;
+  -webkit-filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.4));
+          filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.4));
+}
+
+.left {
+  padding-right: 10vw;
+}
+
+.right {
+  padding-left: 10vw;
+}
+
+.buttons-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-gap: 2em;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sound-button:hover {
+  cursor: pointer;
+}
+
+.slider-panels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.column.slider-panel-column {
+  width: 100%;
+}
+
+#skip {
+  width: 1.5em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.slider-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  padding: 1em;
+}
+
+.slider-container img {
+  position: absolute;
+  left: 15%;
+  width: 1.1em;
+}
+
+.slider.ui-slider {
+  width: 50%;
+  height: 0.6em;
+  background-color: white;
+  border: none;
+  border-radius: 1em;
+}
+
+.slider.ui-slider .ui-slider-handle {
+  margin-top: 0.15em;
+  width: 0.9em;
+  height: 0.9em;
+  background: #17b978;
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  -webkit-filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.8));
+          filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.8));
+}
+
+.slider.ui-slider .ui-slider-handle:focus {
+  outline: none;
+}
+
+.slider.ui-slider .ui-slider-range {
+  border-radius: inherit;
+  background-color: #17b978;
+  -webkit-filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.8));
+          filter: drop-shadow(0 0 2px rgba(23, 185, 120, 0.8));
+}
+
+footer {
+  margin-top: 10%;
+  height: 2.5em;
+  color: rgba(211, 211, 211, 0.2);
+  text-align: center;
+}
+
+#address {
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+  color: #17b978;
+}
+
+@media screen and (max-width: 80em) {
+  .buttons-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 4em;
+  }
+  #left, #right {
+    padding: 2em;
+  }
+  .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .column .header-img {
+    width: 9vw;
+    min-width: 4em;
+    margin-bottom: 3em;
+  }
+  .sound-button {
+    width: 6vw;
+    min-width: 2.5em;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.4em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#001b35), to(#001326));
+  background-image: linear-gradient(#001b35, #001326);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(211, 211, 211, 0.2);
+  border-radius: 1em;
+}
+/*# sourceMappingURL=main.css.map */
