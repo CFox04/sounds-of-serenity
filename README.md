@@ -1,6 +1,6 @@
 # Sounds of Serenity
 
-  Sounds of Serenity is a web application in which users can mix various relaxing sounds and instrumental music together to create a relaxing environment. This can be used for anything such as studying, working, meditation, etc.
+  Sounds of Serenity is a flask web application in which users can mix various relaxing sounds and instrumental music together to create a relaxing environment. This can be used for anything such as studying, working, meditation, etc.
 
 
 ## Features
