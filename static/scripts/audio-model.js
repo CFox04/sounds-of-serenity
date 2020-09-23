@@ -36,7 +36,7 @@ class LoopableAudio {
         this.name = name;
         this.lastPosition = 0;
         this.startPosition = 0;
-        this.loop;
+        this.loop = false;
 
         // Setup gain node for volume
         this.gainNode = this.context.createGain();
@@ -109,8 +109,13 @@ class Playlist {
         this.concurrent;
         this.volume = 50;
 
-        // Sounds play concurrently 
-        if (type == 'sounds') {
+        if (type == 'music') {
+            this.audio.shuffle();
+            this.loop = false;
+            this.concurrent = false;
+        }
+        else {
+            this.loop = true;
             this.concurrent = true;
         }
     }
@@ -203,7 +208,7 @@ class Playlist {
             // Play sequentially
             else {
                 playlist.currentAudio = audio;
-                $(audio).bind('ended', function () {
+                $(audio.source).bind('ended', function () {
                     // If there is more audio to play on the playlist
                     if (playlist.audio[index + 1]) {
                         playlist.play(index + 1);
@@ -275,11 +280,6 @@ class Playlist {
         }
         else {
             console.log(new Error(`Playlist '${playlistName}' not found`));
-        }
-
-        if (type == 'music') {
-            // Shuffle playlist
-            playlist.audio.shuffle();
         }
 
         return playlist;
