@@ -32,21 +32,15 @@ $('.sound-button').click(function () {
     }
     else {
         var type;
-        var volume;
-        var loop;
         // If button is on the right column (music)
         if ($(this).parent().hasClass('music')) {
             type = 'music';
-            volume = musicVolume;
-            loop = false;
         }
         // If button is on the left column (sounds)
         else if ($(this).parent().hasClass('sounds')) {
             type = 'sounds';
-            volume = soundVolume;
-            loop = true;
         }
-        playlist = Playlist.loadPlaylist(playlistName, type, audioNames, false);
+        playlist = Playlist.loadPlaylist(playlistName, type, audioNames);
         playlist.play();
         playlists.push(playlist);
     }
@@ -69,7 +63,7 @@ $('.slider.volume').slider({
 });
 
 // Skip button
-$('#skip').click(function(){
+$('#skip').click(function () {
     let soundsPlaylists = Playlist.findPlaylistByType('music', playlists);
 
     if (soundsPlaylists.length > 0) {
